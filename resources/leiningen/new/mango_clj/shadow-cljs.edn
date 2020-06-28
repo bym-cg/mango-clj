@@ -1,0 +1,16 @@
+{:deps   {:aliases [:dev]}
+ :builds {:main {:target           :browser
+                 :output-dir       "target/public/js/main"
+                 :asset-path       "/js/main"
+                 :modules          {:main {:entries [{{name}}.client]}}
+                 :release          {:output-dir "resources/public/js/main"}
+                 :devtools         {:preloads   [com.fulcrologic.fulcro.inspect.preload]
+                                    :after-load {{name}}.client/after-load}
+                 :compiler-options {:source-map true}}
+          :rn   {:target           :react-native
+                 :output-dir       "target/rn"
+                 :devtools         {:autoload   true
+                                    :after-load {{name}}.client/after-load}
+                 :init-fn          {{name}}.client/main
+                 :compiler-options {:reader-features #{:cljsrn}
+                                    :source-map      true}}}}

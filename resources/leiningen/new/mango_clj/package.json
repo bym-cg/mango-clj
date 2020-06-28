@@ -1,0 +1,17 @@
+{
+  "name": "{{name}}",
+  "dependencies": {
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-native": "0.61.2"
+  },
+  "scripts": {
+    "start": "shadow-cljs run user/-main",
+    "rn-server": "react-native start",
+    "rn-android": "react-native run-android"
+  },
+  "devDependencies": {
+    "shadow-cljs": "2.8.67",
+    "source-map-explorer": "2.1.0"
+  }
+}
